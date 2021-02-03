@@ -1,3 +1,23 @@
+#include <PubSubClient.h>
+
+#include <PubSubClient.h>
+#include <UIPEthernet.h>
+#include <utility/logging.h>
+#include <UIPEthernet.h>
+#include <utility/logging.h>
+
+#include <SPI.h>
+
+//Define o endereço MAC que será utilizado
+byte mac[] = {0x48-0xF9-0x61-0xC8-0xE5-0x81};
+
+//variavel utilizada para enviar mensagens usando o client mqtt
+boolean mensagem;
+
+//Inicia o cliente Ethernet
+EthernetClient client;
+int pino2 = 2;
+bool estado_sensor;
 PubSubClient mqttClient(client);
 void setup() {
     //Inicia o controlador Ethernet e solicita um IP para o servidor de DHCP
